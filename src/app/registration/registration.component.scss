@@ -1,0 +1,43 @@
+input.ng-touched.ng-invalid {
+  border: solid red 2px;
+}
+input.ng-touched.ng-valid {
+  border: solid green 2px;
+}
+.alert-danger {
+  padding: 3px !important;
+}
+.log_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(/assets/Thumb.jpg);
+  background-size: cover;
+  width: 100;
+  height: 100vh;
+}
+.log_window {
+  width: 700px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px 60px;
+  box-sizing: border-box;
+  box-shadow: 2px 3px 20px cyan;
+}
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.rl_area {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.title {
+  cursor: pointer;
+}
+.btn-default {
+  background: cyan;
+    margin: 10px 0 0;
+}

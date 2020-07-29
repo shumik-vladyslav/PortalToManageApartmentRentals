@@ -1,0 +1,51 @@
+<div class="log_wrap">
+  <div class="log_window">
+    <div class="rl_area">
+      <p class="title" [routerLink]="['']">Регистрация</p>
+      <p class="title" [routerLink]="['/login']">Вход</p>
+    </div>
+    <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
+      <div class="form-group">
+          <label>Имя</label>
+          <input class="form-control" name="name" formControlName="userName" />
+
+          <div class="alert alert-danger"
+              *ngIf="myForm.controls['userName'].invalid && myForm.controls['userName'].touched">
+              Не указано имя
+          </div>
+      </div>
+      <div class="form-group">
+          <label>Email</label>
+          <input class="form-control" name="email" formControlName="userEmail" />
+
+          <div class="alert alert-danger"
+              *ngIf="myForm.controls['userEmail'].invalid && myForm.controls['userEmail'].touched">
+              Некорректный email
+          </div>
+      </div>
+      <div class="form-group">
+        <label>Пароль</label>
+        <input class="form-control" name="pass" formControlName="userPass" />
+
+        <div class="alert alert-danger"
+            *ngIf="myForm.controls['userPass'].invalid && myForm.controls['userPass'].touched">
+            Некорректный пароль
+        </div>
+    </div>
+    <div class="form-group">
+      <label>Повторите пароль</label>
+      <input class="form-control" name="repeatpass" formControlName="userRepPass" />
+
+      <div class="alert alert-danger"
+          *ngIf="myForm.controls['userRepPass'].invalid && myForm.controls['userRepPass'].touched">
+          Пароли должны совпадать
+      </div>
+    </div>
+      <div class="form-group">
+          <button class="btn btn-default" [disabled]="myForm.invalid">
+              Регистрация
+          </button>
+      </div>
+  </form>
+  </div>
+</div>

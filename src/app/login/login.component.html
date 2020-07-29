@@ -1,0 +1,33 @@
+<div class="log_wrap">
+  <div class="log_window">
+    <div class="rl_area">
+      <p class="title" [routerLink]="['/login']">Вход</p>
+      <p class="title" [routerLink]="['']">Регистрация</p>
+    </div>
+    <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
+      <div class="form-group">
+        <label>Имя</label>
+        <input class="form-control" name="name" formControlName="userName" />
+
+        <div class="alert alert-danger"
+          *ngIf="myForm.controls['userName'].invalid && myForm.controls['userName'].touched">
+          Не указано имя
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Пароль</label>
+        <input class="form-control" name="pass" formControlName="userPass" />
+
+        <div class="alert alert-danger"
+          *ngIf="myForm.controls['userPass'].invalid && myForm.controls['userPass'].touched">
+          Некорректный пароль
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-default" [disabled]="myForm.invalid">
+          Войти
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
